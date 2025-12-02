@@ -1,29 +1,70 @@
 @import "tailwindcss";
 
+/* Facts Brand Colors */
 :root {
+  /* Brand Colors */
+  --facts-off-black: #141414;
+  --facts-dark-yellow: #F2D518;
+  --facts-highlighter-yellow: #FFE11A;
+  --facts-dark-grey: #595758;
+  --facts-light-grey: #EEF0F2;
+  --facts-white: #F8F4EB;
+  
+  /* Theme Variables - Light Mode */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: var(--facts-off-black);
+  --accent: var(--facts-dark-yellow);
+  --accent-foreground: var(--facts-off-black);
+  --muted: var(--facts-light-grey);
+  --muted-foreground: var(--facts-dark-grey);
+  
   color-scheme: light;
 }
 
 :root[data-color-scheme="dark"] {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  /* Theme Variables - Dark Mode */
+  --background: var(--facts-off-black);
+  --foreground: var(--facts-light-grey);
+  --accent: var(--facts-highlighter-yellow);
+  --accent-foreground: var(--facts-off-black);
+  --muted: #1a1a1a;
+  --muted-foreground: var(--facts-dark-grey);
+  
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-color-scheme]) {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--facts-off-black);
+    --foreground: var(--facts-light-grey);
+    --accent: var(--facts-highlighter-yellow);
+    --accent-foreground: var(--facts-off-black);
+    --muted: #1a1a1a;
+    --muted-foreground: var(--facts-dark-grey);
+    
     color-scheme: dark;
   }
 }
 
+/* Aleo Font is loaded via Google Fonts in layout.tsx */
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  /* Facts Brand Color Tokens */
+  --color-facts-yellow: var(--facts-dark-yellow);
+  --color-facts-yellow-bright: var(--facts-highlighter-yellow);
+  --color-facts-black: var(--facts-off-black);
+  --color-facts-grey: var(--facts-dark-grey);
+  --color-facts-grey-light: var(--facts-light-grey);
+  
+  /* Typography */
+  --font-sans: 'Aleo', Georgia, 'Times New Roman', serif;
   --font-mono: SFMono-Regular, Consolas, "Liberation Mono", monospace;
 }
 
@@ -31,4 +72,42 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+/* Facts Brand Accent Utilities */
+.facts-accent {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.facts-accent-text {
+  color: var(--accent);
+}
+
+.facts-accent-border {
+  border-color: var(--accent);
+}
+
+/* Button Styles with Facts Yellow */
+.facts-button {
+  background-color: var(--facts-dark-yellow);
+  color: var(--facts-off-black);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.facts-button:hover {
+  background-color: var(--facts-highlighter-yellow);
+  transform: translateY(-1px);
+}
+
+/* Dark mode button adjustments */
+:root[data-color-scheme="dark"] .facts-button {
+  background-color: var(--facts-highlighter-yellow);
+}
+
+:root[data-color-scheme="dark"] .facts-button:hover {
+  background-color: var(--facts-dark-yellow);
 }
