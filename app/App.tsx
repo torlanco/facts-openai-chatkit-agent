@@ -45,7 +45,7 @@ export default function App() {
         {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
-          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted hover:bg-cm-coral hover:text-white transition-colors"
+          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted hover:bg-cm-orange hover:text-white transition-colors"
           aria-label={scheme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
         >
           {scheme === "dark" ? (
@@ -82,7 +82,7 @@ export default function App() {
               href="https://www.clasificadosmejores.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-cm-coral transition-colors"
+              className="hover:text-cm-orange transition-colors"
             >
               clasificadosmejores.com
             </a>

@@ -8,8 +8,8 @@ export const CREATE_SESSION_ENDPOINT = "/api/create-session";
 // Clasificados Mejores Brand Colors
 export const CM_COLORS = {
   deepNavy: "#1a1a2e",
-  coral: "#FF6B35",
-  magenta: "#F72585",
+  orange: "#FF7E00",
+  orangeLight: "#FF9933",
   teal: "#4CC9F0",
   slate: "#4a4e69",
   lightGrey: "#f8f9fa",
@@ -42,14 +42,14 @@ export const GREETING = "¡Hola! Soy tu asistente de Clasificados Mejores. ¿Có
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
   color: {
     grayscale: {
-      // Warm coral tint to match brand
-      hue: 15, // Orange-coral hue for grays
+      // Warm orange tint to match brand
+      hue: 30, // Orange hue for grays
       tint: theme === "dark" ? 3 : 5,
       shade: theme === "dark" ? -3 : -2,
     },
     accent: {
-      // Brand coral as accent
-      primary: CM_COLORS.coral,
+      // Brand orange as accent
+      primary: CM_COLORS.orange,
       level: 2,
     },
     surface: {

@@ -4,8 +4,8 @@
 :root {
   /* Brand Colors */
   --cm-deep-navy: #1a1a2e;
-  --cm-coral: #FF6B35;
-  --cm-magenta: #F72585;
+  --cm-orange: #FF7E00;
+  --cm-orange-light: #FF9933;
   --cm-teal: #4CC9F0;
   --cm-slate: #4a4e69;
   --cm-light-grey: #f8f9fa;
@@ -14,8 +14,8 @@
   /* Theme Variables - Light Mode */
   --background: #ffffff;
   --foreground: var(--cm-deep-navy);
-  --accent: var(--cm-coral);
-  --accent-secondary: var(--cm-magenta);
+  --accent: var(--cm-orange);
+  --accent-secondary: var(--cm-orange-light);
   --accent-foreground: var(--cm-white);
   --muted: var(--cm-light-grey);
   --muted-foreground: var(--cm-slate);
@@ -27,8 +27,8 @@
   /* Theme Variables - Dark Mode */
   --background: var(--cm-deep-navy);
   --foreground: var(--cm-light-grey);
-  --accent: var(--cm-coral);
-  --accent-secondary: var(--cm-magenta);
+  --accent: var(--cm-orange);
+  --accent-secondary: var(--cm-orange-light);
   --accent-foreground: var(--cm-white);
   --muted: #16213e;
   --muted-foreground: #9a8c98;
@@ -40,8 +40,8 @@
   :root:not([data-color-scheme]) {
     --background: var(--cm-deep-navy);
     --foreground: var(--cm-light-grey);
-    --accent: var(--cm-coral);
-    --accent-secondary: var(--cm-magenta);
+    --accent: var(--cm-orange);
+    --accent-secondary: var(--cm-orange-light);
     --accent-foreground: var(--cm-white);
     --muted: #16213e;
     --muted-foreground: #9a8c98;
@@ -62,8 +62,8 @@
   --color-muted-foreground: var(--muted-foreground);
   
   /* Brand Color Tokens */
-  --color-cm-coral: var(--cm-coral);
-  --color-cm-magenta: var(--cm-magenta);
+  --color-cm-orange: var(--cm-orange);
+  --color-cm-orange-light: var(--cm-orange-light);
   --color-cm-teal: var(--cm-teal);
   --color-cm-navy: var(--cm-deep-navy);
   --color-cm-slate: var(--cm-slate);
@@ -82,35 +82,33 @@ body {
 
 /* Brand Accent Utilities */
 .cm-accent {
-  background: linear-gradient(135deg, var(--cm-coral) 0%, var(--cm-magenta) 100%);
+  background: var(--cm-orange);
   color: var(--accent-foreground);
 }
 
 .cm-accent-text {
-  background: linear-gradient(135deg, var(--cm-coral) 0%, var(--cm-magenta) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--cm-orange);
 }
 
 .cm-accent-border {
-  border-image: linear-gradient(135deg, var(--cm-coral), var(--cm-magenta)) 1;
+  border-color: var(--cm-orange);
 }
 
-/* Button Styles with Brand Gradient */
+/* Button Styles with Brand Orange */
 .cm-button {
-  background: linear-gradient(135deg, var(--cm-coral) 0%, var(--cm-magenta) 100%);
+  background: var(--cm-orange);
   color: var(--cm-white);
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 4px 14px 0 rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 14px 0 rgba(255, 126, 0, 0.3);
 }
 
 .cm-button:hover {
+  background: var(--cm-orange-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px 0 rgba(247, 37, 133, 0.4);
+  box-shadow: 0 6px 20px 0 rgba(255, 126, 0, 0.4);
 }
 
 /* Teal accent for secondary actions */
