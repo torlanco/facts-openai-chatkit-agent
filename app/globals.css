@@ -1,70 +1,76 @@
 @import "tailwindcss";
 
-/* Facts Brand Colors */
+/* Clasificados Mejores Brand Colors */
 :root {
   /* Brand Colors */
-  --facts-off-black: #141414;
-  --facts-dark-yellow: #F2D518;
-  --facts-highlighter-yellow: #FFE11A;
-  --facts-dark-grey: #595758;
-  --facts-light-grey: #EEF0F2;
-  --facts-white: #F8F4EB;
+  --cm-deep-navy: #1a1a2e;
+  --cm-coral: #FF6B35;
+  --cm-magenta: #F72585;
+  --cm-teal: #4CC9F0;
+  --cm-slate: #4a4e69;
+  --cm-light-grey: #f8f9fa;
+  --cm-white: #ffffff;
   
   /* Theme Variables - Light Mode */
   --background: #ffffff;
-  --foreground: var(--facts-off-black);
-  --accent: var(--facts-dark-yellow);
-  --accent-foreground: var(--facts-off-black);
-  --muted: var(--facts-light-grey);
-  --muted-foreground: var(--facts-dark-grey);
+  --foreground: var(--cm-deep-navy);
+  --accent: var(--cm-coral);
+  --accent-secondary: var(--cm-magenta);
+  --accent-foreground: var(--cm-white);
+  --muted: var(--cm-light-grey);
+  --muted-foreground: var(--cm-slate);
   
   color-scheme: light;
 }
 
 :root[data-color-scheme="dark"] {
   /* Theme Variables - Dark Mode */
-  --background: var(--facts-off-black);
-  --foreground: var(--facts-light-grey);
-  --accent: var(--facts-highlighter-yellow);
-  --accent-foreground: var(--facts-off-black);
-  --muted: #1a1a1a;
-  --muted-foreground: var(--facts-dark-grey);
+  --background: var(--cm-deep-navy);
+  --foreground: var(--cm-light-grey);
+  --accent: var(--cm-coral);
+  --accent-secondary: var(--cm-magenta);
+  --accent-foreground: var(--cm-white);
+  --muted: #16213e;
+  --muted-foreground: #9a8c98;
   
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-color-scheme]) {
-    --background: var(--facts-off-black);
-    --foreground: var(--facts-light-grey);
-    --accent: var(--facts-highlighter-yellow);
-    --accent-foreground: var(--facts-off-black);
-    --muted: #1a1a1a;
-    --muted-foreground: var(--facts-dark-grey);
+    --background: var(--cm-deep-navy);
+    --foreground: var(--cm-light-grey);
+    --accent: var(--cm-coral);
+    --accent-secondary: var(--cm-magenta);
+    --accent-foreground: var(--cm-white);
+    --muted: #16213e;
+    --muted-foreground: #9a8c98;
     
     color-scheme: dark;
   }
 }
 
-/* Aleo Font is loaded via Google Fonts in layout.tsx */
+/* Poppins Font is loaded via Google Fonts in layout.tsx */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
   --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   
-  /* Facts Brand Color Tokens */
-  --color-facts-yellow: var(--facts-dark-yellow);
-  --color-facts-yellow-bright: var(--facts-highlighter-yellow);
-  --color-facts-black: var(--facts-off-black);
-  --color-facts-grey: var(--facts-dark-grey);
-  --color-facts-grey-light: var(--facts-light-grey);
+  /* Brand Color Tokens */
+  --color-cm-coral: var(--cm-coral);
+  --color-cm-magenta: var(--cm-magenta);
+  --color-cm-teal: var(--cm-teal);
+  --color-cm-navy: var(--cm-deep-navy);
+  --color-cm-slate: var(--cm-slate);
+  --color-cm-light: var(--cm-light-grey);
   
   /* Typography */
-  --font-sans: 'Aleo', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Poppins', 'Segoe UI', system-ui, sans-serif;
   --font-mono: SFMono-Regular, Consolas, "Liberation Mono", monospace;
 }
 
@@ -74,40 +80,50 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Facts Brand Accent Utilities */
-.facts-accent {
-  background-color: var(--accent);
+/* Brand Accent Utilities */
+.cm-accent {
+  background: linear-gradient(135deg, var(--cm-coral) 0%, var(--cm-magenta) 100%);
   color: var(--accent-foreground);
 }
 
-.facts-accent-text {
-  color: var(--accent);
+.cm-accent-text {
+  background: linear-gradient(135deg, var(--cm-coral) 0%, var(--cm-magenta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.facts-accent-border {
-  border-color: var(--accent);
+.cm-accent-border {
+  border-image: linear-gradient(135deg, var(--cm-coral), var(--cm-magenta)) 1;
 }
 
-/* Button Styles with Facts Yellow */
-.facts-button {
-  background-color: var(--facts-dark-yellow);
-  color: var(--facts-off-black);
-  font-weight: 700;
+/* Button Styles with Brand Gradient */
+.cm-button {
+  background: linear-gradient(135deg, var(--cm-coral) 0%, var(--cm-magenta) 100%);
+  color: var(--cm-white);
+  font-weight: 600;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px 0 rgba(255, 107, 53, 0.3);
+}
+
+.cm-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(247, 37, 133, 0.4);
+}
+
+/* Teal accent for secondary actions */
+.cm-button-secondary {
+  background: var(--cm-teal);
+  color: var(--cm-deep-navy);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
   transition: all 0.2s ease-in-out;
 }
 
-.facts-button:hover {
-  background-color: var(--facts-highlighter-yellow);
+.cm-button-secondary:hover {
+  background: #3ab5dc;
   transform: translateY(-1px);
-}
-
-/* Dark mode button adjustments */
-:root[data-color-scheme="dark"] .facts-button {
-  background-color: var(--facts-highlighter-yellow);
-}
-
-:root[data-color-scheme="dark"] .facts-button:hover {
-  background-color: var(--facts-dark-yellow);
 }
