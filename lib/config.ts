@@ -31,12 +31,7 @@ export const STARTER_PROMPTS: StartScreenPrompt[] = [
   {
     label: "Publicar anuncio",
     prompt: "¿Cómo puedo publicar un anuncio clasificado?",
-    icon: "plus",
-  },
-  {
-    label: "Ver categorías",
-    prompt: "¿Cuáles son las categorías de clasificados disponibles?",
-    icon: "list",
+    icon: "chart",
   },
 ];
 
