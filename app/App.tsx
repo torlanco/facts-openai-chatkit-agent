@@ -38,7 +38,7 @@ export default function App() {
             className="h-10 w-auto"
           />
           <span className="text-sm font-medium text-muted-foreground hidden sm:inline">
-            Powered by GPT
+            Powered by Factscloud
           </span>
         </div>
         
@@ -76,7 +76,7 @@ export default function App() {
       {/* Footer */}
       <footer className="w-full border-t border-muted py-4 px-6">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-muted-foreground">
-          <p>© 2024 Facts. Todos los derechos reservados.</p>
+          <p>© 2025 Facts. Todos los derechos reservados.</p>
           <div className="flex items-center gap-4">
             <a 
               href="https://factscloud.com" 
