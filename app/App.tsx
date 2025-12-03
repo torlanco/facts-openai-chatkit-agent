@@ -32,10 +32,10 @@ export default function App() {
           <Image
             src={scheme === "dark" ? "/logo-white.svg" : "/logo.svg"}
             alt="Clasificados Mejores"
-            width={180}
-            height={48}
+            width={120}
+            height={32}
             priority
-            className="h-12 w-auto"
+            className="h-8 w-auto"
           />
           <span className="text-sm font-medium text-muted-foreground hidden sm:inline">
             Los mejores clasificados de Puerto Rico
